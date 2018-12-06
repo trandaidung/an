@@ -41,7 +41,7 @@ const Blog = ({data, location}) => (
 );
 
 export const pageQuery = graphql`
-  query TemplateBlogMarkdown($slug: String!) {
+  query TemplateGrammarMarkdown($slug: String!) {
     markdownRemark(fields: {slug: {eq: $slug}}) {
       html
       excerpt(pruneLength: 500)

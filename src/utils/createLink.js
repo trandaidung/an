@@ -19,7 +19,7 @@ type CreateLinkBaseProps = {
   section: Object,
 };
 
-const createLinkBlog = ({
+const createLinkVocabulary = ({
   isActive,
   item,
   section,
@@ -126,7 +126,7 @@ const linkCss = {
 };
 
 export {
-  createLinkBlog,
+  createLinkVocabulary,
   createLinkCommunity,
   createLinkDocs,
   createLinkTutorial,

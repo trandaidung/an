@@ -23,14 +23,14 @@ type Props = {
   location: Location,
 };
 
-const AllBlogPosts = ({data, location}: Props) => (
+const AllVocabularyPosts = ({data, location}: Props) => (
   <Layout location={location}>
     <Container>
       <div css={sharedStyles.articleLayout.container}>
         <div css={sharedStyles.articleLayout.content}>
           <Header>All Posts</Header>
           <TitleAndMetaTags
-            ogUrl={`${urlRoot}/blog/all.html`}
+            ogUrl={`${urlRoot}/vocabulary/all.html`}
             title="React - All Posts"
           />
           <ul
@@ -101,9 +101,9 @@ const AllBlogPosts = ({data, location}: Props) => (
 );
 
 export const pageQuery = graphql`
-  query AllBlogPostsPageQuery {
+  query AllVocabularyPostsPageQuery {
     allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/blog/"}}
+      filter: {fileAbsolutePath: {regex: "/vocabulary/"}}
       sort: {fields: [fields___date], order: DESC}
     ) {
       edges {
@@ -127,4 +127,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default AllBlogPosts;
+export default AllVocabularyPosts;

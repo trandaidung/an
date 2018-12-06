@@ -133,7 +133,7 @@ module.exports = {
               {
                   allMarkdownRemark
                   (limit: 10,
-                  filter: {fileAbsolutePath: {regex: "/blog/"}},
+                  filter: {fileAbsolutePath: {regex: "/vocabulary/"}},
                   sort: {fields: [fields___date],
                   order: DESC}) {
                     edges {
