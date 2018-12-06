@@ -32,33 +32,6 @@ const createLinkVocabulary = ({
   );
 };
 
-const createLinkCommunity = ({
-  isActive,
-  item,
-  section,
-}: CreateLinkBaseProps): Node => {
-  if (item.href) {
-    return (
-      <a css={[linkCss]} href={item.href} target="_blank" rel="noopener">
-        {item.title}
-        <ExternalLinkSvg
-          cssProps={{
-            verticalAlign: -2,
-            display: 'inline-block',
-            marginLeft: 5,
-            color: colors.subtle,
-          }}
-        />
-      </a>
-    );
-  }
-  return createLinkDocs({
-    isActive,
-    item,
-    section,
-  });
-};
-
 const createLinkDocs = ({
   isActive,
   item,
@@ -127,7 +100,6 @@ const linkCss = {
 
 export {
   createLinkVocabulary,
-  createLinkCommunity,
   createLinkDocs,
   createLinkTutorial,
 };

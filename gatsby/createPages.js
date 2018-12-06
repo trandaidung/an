@@ -15,7 +15,6 @@ module.exports = async ({graphql, actions}) => {
   const redirectToSlugMap = {};
 
   const vocabularyTemplate = resolve(__dirname, '../src/templates/vocabulary.js');
-  const communityTemplate = resolve(__dirname, '../src/templates/community.js');
   const docsTemplate = resolve(__dirname, '../src/templates/docs.js');
   const tutorialTemplate = resolve(__dirname, '../src/templates/tutorial.js');
 
@@ -58,7 +57,6 @@ module.exports = async ({graphql, actions}) => {
       // (which gets created by Gatsby during a separate phase).
     } else if (
       slug.includes('vocabulary/') ||
-      slug.includes('community/') ||
       slug.includes('contributing/') ||
       slug.includes('docs/') ||
       slug.includes('tutorial/') ||
@@ -67,8 +65,6 @@ module.exports = async ({graphql, actions}) => {
       let template;
       if (slug.includes('vocabulary/')) {
         template = vocabularyTemplate;
-      } else if (slug.includes('community/')) {
-        template = communityTemplate;
       } else if (
         slug.includes('contributing/') ||
         slug.includes('docs/') ||
