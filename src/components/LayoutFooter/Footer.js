@@ -12,7 +12,7 @@ import FooterNav from './FooterNav';
 import MetaTitle from 'templates/components/MetaTitle';
 import React from 'react';
 import {colors, media} from 'theme';
-import { sectionListDocs} from 'utils/sectionList';
+import {sectionListDocs} from 'utils/sectionList';
 
 import ossLogoPng from 'images/oss_logo.png';
 

@@ -17,7 +17,4 @@ const sectionListDocs = navDocs.map(
   }),
 );
 
-export {
-  sectionListDocs,
-  navTutorial as sectionListTutorial,
-};
+export {sectionListDocs, navTutorial as sectionListTutorial};
