@@ -48,10 +48,6 @@ files:
     translation: '/docs/%locale%/vocabulary/%original_file_name%'
     languages_mapping: *anchor
   -
-    source: '/content/tutorial/*.md'
-    translation: '/docs/%locale%/tutorial/%original_file_name%'
-    languages_mapping: *anchor
-  -
     source: '/content/contributing/*.md'
     translation: '/docs/%locale%/contributing/%original_file_name%'
     languages_mapping: *anchor

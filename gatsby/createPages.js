@@ -16,7 +16,6 @@ module.exports = async ({graphql, actions}) => {
 
   const vocabularyTemplate = resolve(__dirname, '../src/templates/vocabulary.js');
   const docsTemplate = resolve(__dirname, '../src/templates/docs.js');
-  const tutorialTemplate = resolve(__dirname, '../src/templates/tutorial.js');
 
   // Redirect /index.html to root.
   createRedirect({
@@ -59,7 +58,6 @@ module.exports = async ({graphql, actions}) => {
       slug.includes('vocabulary/') ||
       slug.includes('contributing/') ||
       slug.includes('docs/') ||
-      slug.includes('tutorial/') ||
       slug.includes('warnings/')
     ) {
       let template;
@@ -71,8 +69,6 @@ module.exports = async ({graphql, actions}) => {
         slug.includes('warnings/')
       ) {
         template = docsTemplate;
-      } else if (slug.includes('tutorial/')) {
-        template = tutorialTemplate;
       }
 
       const createArticlePage = path =>

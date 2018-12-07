@@ -119,7 +119,6 @@ const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
           </FooterNav>
           <FooterNav layoutHasSidebar={layoutHasSidebar}>
             <MetaTitle onDark={true}>More</MetaTitle>
-            <FooterLink to="/tutorial/tutorial.html">Tutorial</FooterLink>
             <FooterLink to="/vocabulary/">Vocabulary</FooterLink>
             <FooterLink to="/acknowledgements.html">
               Acknowledgements
