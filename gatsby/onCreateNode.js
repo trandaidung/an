@@ -39,7 +39,8 @@ module.exports = exports.onCreateNode = ({node, actions, getNode}) => {
       if (!slug) {
         if (
           relativePath.includes('vocabulary') ||
-          relativePath.includes('grammar')
+          relativePath.includes('grammar') ||
+          relativePath.includes('communication')
         ) {
           // Blog posts don't have embedded permalinks.
           // Their slugs follow a pattern: /blog/<year>/<month>/<day>/<slug>.html
@@ -54,7 +55,9 @@ module.exports = exports.onCreateNode = ({node, actions, getNode}) => {
             slug = `/vocabulary/${year}/${month}/${day}/${filename}.html`;
           } else if (relativePath.includes('grammar')) {
             slug = `/grammar/${year}/${month}/${day}/${filename}.html`;            
-          }
+          } else if (relativePath.includes('communication')) {
+            slug = `/communication/${year}/${month}/${day}/${filename}.html`;            
+          };
 
           const date = new Date(year, month - 1, day);
 

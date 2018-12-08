@@ -11,6 +11,9 @@ files:
     source: '/content/grammar/*.md'
     languages_mapping: *anchor
   -
+    source: '/content/communication/*.md'
+    languages_mapping: *anchor
+  -
     source: '/README.md'
     languages_mapping: *anchor
   -

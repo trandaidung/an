@@ -16,6 +16,7 @@ module.exports = async ({graphql, actions}) => {
 
   const vocabularyTemplate = resolve(__dirname, '../src/templates/vocabulary.js');
   const grammarTemplate = resolve(__dirname, '../src/templates/grammar.js');
+  const communicationTemplate = resolve(__dirname, '../src/templates/communication.js');
 
   // Redirect /index.html to root.
   createRedirect({
@@ -56,13 +57,16 @@ module.exports = async ({graphql, actions}) => {
       // (which gets created by Gatsby during a separate phase).
     } else if (
       slug.includes('/vocabulary/') ||
-      slug.includes('grammar/')
+      slug.includes('grammar/') ||
+      slug.includes('communication/')
     ) {
       let template;
       if (slug.includes('/vocabulary/')) {
         template = vocabularyTemplate
       } else if (slug.includes('grammar/')) {
         template = grammarTemplate
+      } else if (slug.includes('communication/')) {
+        template = communicationTemplate
       };
 
       const createArticlePage = path =>
@@ -129,7 +133,6 @@ module.exports = async ({graphql, actions}) => {
       }
     `,
   );
-
   const newestGrammarEntry = await graphql(
     `
       {
@@ -149,9 +152,29 @@ module.exports = async ({graphql, actions}) => {
       }
     `,
   );
+  const newestCommunicationEntry = await graphql(
+    `
+      {
+        allMarkdownRemark(
+          limit: 1
+          filter: {fileAbsolutePath: {regex: "/communication/"}}
+          sort: {fields: [fields___date], order: DESC}
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `,
+  );
 
   const newestVocabularyNode = newestVocabularyEntry.data.allMarkdownRemark.edges[0].node;
   const newestGrammarNode = newestGrammarEntry.data.allMarkdownRemark.edges[0].node;
+  const newestCommunicationNode = newestCommunicationEntry.data.allMarkdownRemark.edges[0].node;
 
   // Blog landing page should always show the most recent blog entry.
   ['/vocabulary/', '/vocabulary'].map(slug => {
@@ -166,6 +189,13 @@ module.exports = async ({graphql, actions}) => {
       fromPath: slug,
       redirectInBrowser: true,
       toPath: newestGrammarNode.fields.slug,
+    });
+  });
+  ['/communication/', '/communication'].map(slug => {
+    createRedirect({
+      fromPath: slug,
+      redirectInBrowser: true,
+      toPath: newestCommunicationNode.fields.slug,
     });
   });
 };
