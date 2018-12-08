@@ -10,7 +10,6 @@ import HeaderLink from './HeaderLink';
 import {Link} from 'gatsby';
 import React from 'react';
 import {colors, fonts, media} from 'theme';
-import {version} from 'site-constants';
 import ExternalLinkSvg from 'templates/components/ExternalLinkSvg';
 import DocSearch from './DocSearch';
 
@@ -136,25 +135,6 @@ const Header = ({location}: {location: Location}) => (
               width: 'calc(100% / 6)',
             },
           }}>
-          <Link
-            css={{
-              padding: '5px 10px',
-              whiteSpace: 'nowrap',
-              ...fonts.small,
-
-              ':hover': {
-                color: colors.brand,
-              },
-
-              ':focus': {
-                outline: 0,
-                backgroundColor: colors.lighter,
-                borderRadius: 15,
-              },
-            }}
-            to="/versions">
-            v{version}
-          </Link>
           <a
             css={{
               padding: '5px 10px',
