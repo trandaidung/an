@@ -19,13 +19,13 @@ const toSectionList = allMarkdownRemark => [
         title: node.frontmatter.title,
       }))
       .concat({
-        id: '/vocabulary/all.html',
+        id: '/grammar/all.html',
         title: 'All posts ...',
       }),
   },
 ];
 
-const Blog = ({data, location}) => (
+const Grammar = ({data, location}) => (
   <Layout location={location}>
     <MarkdownPage
       authors={data.markdownRemark.frontmatter.author}
@@ -41,7 +41,7 @@ const Blog = ({data, location}) => (
 );
 
 export const pageQuery = graphql`
-  query TemplateBlogMarkdown($slug: String!) {
+  query TemplateGrammarMarkdown($slug: String!) {
     markdownRemark(fields: {slug: {eq: $slug}}) {
       html
       excerpt(pruneLength: 500)
@@ -62,7 +62,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       limit: 10
-      filter: {fileAbsolutePath: {regex: "/vocabulary/"}}
+      filter: {fileAbsolutePath: {regex: "/grammar/"}}
       sort: {fields: [fields___date], order: DESC}
     ) {
       edges {
@@ -79,4 +79,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default Blog;
+export default Grammar;

@@ -8,6 +8,9 @@ files:
     source: '/content/vocabulary/*.md'
     languages_mapping: *anchor
   -
+    source: '/content/grammar/*.md'
+    languages_mapping: *anchor
+  -
     source: '/README.md'
     languages_mapping: *anchor
   -

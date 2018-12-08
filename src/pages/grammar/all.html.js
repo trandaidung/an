@@ -8,18 +8,18 @@ type Props = {
   location: Location
 };
 
-const AllVocabularyPosts = ({data, location}: Props) => (
+const AllGrammarPosts = ({data, location}: Props) => (
   <AllBlogPosts 
-    blogType={'vocabulary'}
+    blogType={'grammar'}
     data={data}
     location={location}  
   />
 );
 
 export const pageQuery = graphql`
-  query AllVocabularyPostsPageQuery {
+  query AllGrammarPostsPageQuery {
     allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/vocabulary/"}}
+      filter: {fileAbsolutePath: {regex: "/grammar/"}}
       sort: {fields: [fields___date], order: DESC}
     ) {
       edges {
@@ -43,4 +43,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default AllVocabularyPosts;
+export default AllGrammarPosts;

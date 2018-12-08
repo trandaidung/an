@@ -14,7 +14,8 @@ module.exports = async ({graphql, actions}) => {
   // Used to detect and prevent duplicate redirects
   const redirectToSlugMap = {};
 
-  const blogTemplate = resolve(__dirname, '../src/templates/blog.js');
+  const vocabularyTemplate = resolve(__dirname, '../src/templates/vocabulary.js');
+  const grammarTemplate = resolve(__dirname, '../src/templates/grammar.js');
 
   // Redirect /index.html to root.
   createRedirect({
@@ -54,9 +55,15 @@ module.exports = async ({graphql, actions}) => {
       // Error codes are managed by a page in src/pages
       // (which gets created by Gatsby during a separate phase).
     } else if (
-      slug.includes('vocabulary/')
+      slug.includes('/vocabulary/') ||
+      slug.includes('grammar/')
     ) {
-      const template = blogTemplate;
+      let template;
+      if (slug.includes('/vocabulary/')) {
+        template = vocabularyTemplate
+      } else if (slug.includes('grammar/')) {
+        template = grammarTemplate
+      };
 
       const createArticlePage = path =>
         createPage({
@@ -103,7 +110,7 @@ module.exports = async ({graphql, actions}) => {
     }
   });
 
-  const newestBlogEntry = await graphql(
+  const newestVocabularyEntry = await graphql(
     `
       {
         allMarkdownRemark(
@@ -123,14 +130,42 @@ module.exports = async ({graphql, actions}) => {
     `,
   );
 
-  const newestBlogNode = newestBlogEntry.data.allMarkdownRemark.edges[0].node;
+  const newestGrammarEntry = await graphql(
+    `
+      {
+        allMarkdownRemark(
+          limit: 1
+          filter: {fileAbsolutePath: {regex: "/grammar/"}}
+          sort: {fields: [fields___date], order: DESC}
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `,
+  );
+
+  const newestVocabularyNode = newestVocabularyEntry.data.allMarkdownRemark.edges[0].node;
+  const newestGrammarNode = newestGrammarEntry.data.allMarkdownRemark.edges[0].node;
 
   // Blog landing page should always show the most recent blog entry.
   ['/vocabulary/', '/vocabulary'].map(slug => {
     createRedirect({
       fromPath: slug,
       redirectInBrowser: true,
-      toPath: newestBlogNode.fields.slug,
+      toPath: newestVocabularyNode.fields.slug,
+    });
+  });
+  ['/grammar/', '/grammar'].map(slug => {
+    createRedirect({
+      fromPath: slug,
+      redirectInBrowser: true,
+      toPath: newestGrammarNode.fields.slug,
     });
   });
 };

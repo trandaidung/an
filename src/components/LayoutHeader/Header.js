@@ -117,6 +117,11 @@ const Header = ({location}: {location: Location}) => (
             title="Vocabulary"
             to="/vocabulary/"
           />
+          <HeaderLink
+            isActive={location.pathname.includes('/grammar')}
+            title="Grammar"
+            to="/grammar/"
+          />
         </nav>
 
         <DocSearch />
