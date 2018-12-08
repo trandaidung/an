@@ -8,8 +8,8 @@
 
 const path = require('path');
 
-// Parse date information out of vocabulary post filename.
-const VOCABULARY_POST_FILENAME_REGEX = /([0-9]+)\-([0-9]+)\-([0-9]+)\-(.+)\.md$/;
+// Parse date information out of blog post filename.
+const BLOG_POST_FILENAME_REGEX = /([0-9]+)\-([0-9]+)\-([0-9]+)\-(.+)\.md$/;
 
 function buildRedirectString(permalink, redirect_from) {
   if (!permalink || !permalink.endsWith('.html')) {
@@ -38,10 +38,10 @@ module.exports = exports.onCreateNode = ({node, actions, getNode}) => {
 
       if (!slug) {
         if (relativePath.includes('vocabulary')) {
-          // Vocabulary posts don't have embedded permalinks.
-          // Their slugs follow a pattern: /vocabulary/<year>/<month>/<day>/<slug>.html
+          // Blog posts don't have embedded permalinks.
+          // Their slugs follow a pattern: /blog/<year>/<month>/<day>/<slug>.html
           // The date portion comes from the file name: <date>-<title>.md
-          const match = VOCABULARY_POST_FILENAME_REGEX.exec(relativePath);
+          const match = BLOG_POST_FILENAME_REGEX.exec(relativePath);
           const year = match[1];
           const month = match[2];
           const day = match[3];
@@ -51,7 +51,7 @@ module.exports = exports.onCreateNode = ({node, actions, getNode}) => {
 
           const date = new Date(year, month - 1, day);
 
-          // Vocabulary posts are sorted by date and display the date in their header.
+          // Blog posts are sorted by date and display the date in their header.
           createNodeField({
             node,
             name: 'date',

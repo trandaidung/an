@@ -8,7 +8,7 @@ import React from 'react';
 import {graphql} from 'gatsby';
 import Layout from 'components/Layout';
 import MarkdownPage from 'components/MarkdownPage';
-import {createLinkVocabulary} from 'utils/createLink';
+import {createLinkBlog} from 'utils/createLink';
 
 const toSectionList = allMarkdownRemark => [
   {
@@ -25,23 +25,23 @@ const toSectionList = allMarkdownRemark => [
   },
 ];
 
-const Vocabulary = ({data, location}) => (
+const Blog = ({data, location}) => (
   <Layout location={location}>
     <MarkdownPage
       authors={data.markdownRemark.frontmatter.author}
-      createLink={createLinkVocabulary}
+      createLink={createLinkBlog}
       date={data.markdownRemark.fields.date}
       location={location}
       ogDescription={data.markdownRemark.excerpt}
       markdownRemark={data.markdownRemark}
       sectionList={toSectionList(data.allMarkdownRemark)}
-      titlePostfix=" &ndash; React Vocabulary"
+      titlePostfix=" &ndash; React Blog"
     />
   </Layout>
 );
 
 export const pageQuery = graphql`
-  query TemplateVocabularyMarkdown($slug: String!) {
+  query TemplateBlogMarkdown($slug: String!) {
     markdownRemark(fields: {slug: {eq: $slug}}) {
       html
       excerpt(pruneLength: 500)
@@ -79,4 +79,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default Vocabulary;
+export default Blog;

@@ -14,7 +14,7 @@ module.exports = async ({graphql, actions}) => {
   // Used to detect and prevent duplicate redirects
   const redirectToSlugMap = {};
 
-  const vocabularyTemplate = resolve(__dirname, '../src/templates/vocabulary.js');
+  const blogTemplate = resolve(__dirname, '../src/templates/blog.js');
 
   // Redirect /index.html to root.
   createRedirect({
@@ -56,7 +56,7 @@ module.exports = async ({graphql, actions}) => {
     } else if (
       slug.includes('vocabulary/')
     ) {
-      const template = vocabularyTemplate;
+      const template = blogTemplate;
 
       const createArticlePage = path =>
         createPage({
@@ -103,7 +103,7 @@ module.exports = async ({graphql, actions}) => {
     }
   });
 
-  const newestVocabularyEntry = await graphql(
+  const newestBlogEntry = await graphql(
     `
       {
         allMarkdownRemark(
@@ -123,14 +123,14 @@ module.exports = async ({graphql, actions}) => {
     `,
   );
 
-  const newestVocabularyNode = newestVocabularyEntry.data.allMarkdownRemark.edges[0].node;
+  const newestBlogNode = newestBlogEntry.data.allMarkdownRemark.edges[0].node;
 
-  // Vocabulary landing page should always show the most recent vocabulary entry.
+  // Blog landing page should always show the most recent blog entry.
   ['/vocabulary/', '/vocabulary'].map(slug => {
     createRedirect({
       fromPath: slug,
       redirectInBrowser: true,
-      toPath: newestVocabularyNode.fields.slug,
+      toPath: newestBlogNode.fields.slug,
     });
   });
 };
