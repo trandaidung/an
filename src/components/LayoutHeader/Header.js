@@ -11,7 +11,6 @@ import {Link} from 'gatsby';
 import React from 'react';
 import {colors, fonts, media} from 'theme';
 import ExternalLinkSvg from 'templates/components/ExternalLinkSvg';
-import DocSearch from './DocSearch';
 
 import logoSvg from 'icons/logo.svg';
 
@@ -128,8 +127,6 @@ const Header = ({location}: {location: Location}) => (
             to="/communication/"
           />
         </nav>
-
-        <DocSearch />
 
         <div
           css={{
