@@ -60,10 +60,10 @@ const Header = ({location}: {location: Location}) => (
             },
           }}
           to="/">
-          <img src={logoSvg} alt="" height="20" />
+          <img src={logoSvg} alt="" height="30" />
           <span
             css={{
-              color: 'inherit',
+              color: colors.brand,
               marginLeft: 10,
               fontWeight: 700,
               fontSize: 20,
@@ -84,7 +84,7 @@ const Header = ({location}: {location: Location}) => (
                 border: 0,
               },
             }}>
-            React
+            an
           </span>
         </Link>
 
@@ -139,6 +139,7 @@ const Header = ({location}: {location: Location}) => (
           }}>
           <a
             css={{
+              color: colors.dark,
               padding: '5px 10px',
               marginLeft: 10,
               whiteSpace: 'nowrap',
@@ -157,7 +158,7 @@ const Header = ({location}: {location: Location}) => (
             href="https://github.com/facebook/react/"
             target="_blank"
             rel="noopener">
-            GitHub
+            Facebook
             <ExternalLinkSvg
               cssProps={{
                 marginLeft: 5,
