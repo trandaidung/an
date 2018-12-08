@@ -59,63 +59,18 @@ const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
             },
           }}>
           <FooterNav layoutHasSidebar={layoutHasSidebar}>
+            <MetaTitle onDark={true}>Categories</MetaTitle>
+            <FooterLink to="/vocabulary/">Vocabulary</FooterLink>
+            <FooterLink to="/grammar/">Grammar</FooterLink>
+            <FooterLink to="/communication/">Communication</FooterLink>
+          </FooterNav>
+          <FooterNav layoutHasSidebar={layoutHasSidebar}>
             <MetaTitle onDark={true}>Channels</MetaTitle>
-            <ExternalFooterLink
-              href="https://github.com/facebook/react"
-              target="_blank"
-              rel="noopener">
-              GitHub
-            </ExternalFooterLink>
-            <ExternalFooterLink
-              href="https://stackoverflow.com/questions/tagged/reactjs"
-              target="_blank"
-              rel="noopener">
-              Stack Overflow
-            </ExternalFooterLink>
-            <ExternalFooterLink
-              href="https://discuss.reactjs.org"
-              target="_blank"
-              rel="noopener">
-              Discussion Forum
-            </ExternalFooterLink>
-            <ExternalFooterLink
-              href="https://discord.gg/0ZcbPKXt5bZjGY5n"
-              target="_blank"
-              rel="noopener">
-              Reactiflux Chat
-            </ExternalFooterLink>
-            <ExternalFooterLink
-              href="https://dev.to/t/react"
-              target="_blank"
-              rel="noopener">
-              DEV Community
-            </ExternalFooterLink>
             <ExternalFooterLink
               href="https://www.facebook.com/react"
               target="_blank"
               rel="noopener">
               Facebook
-            </ExternalFooterLink>
-            <ExternalFooterLink
-              href="https://twitter.com/reactjs"
-              target="_blank"
-              rel="noopener">
-              Twitter
-            </ExternalFooterLink>
-          </FooterNav>
-          <FooterNav layoutHasSidebar={layoutHasSidebar}>
-            <MetaTitle onDark={true}>More</MetaTitle>
-            <FooterLink to="/vocabulary/">Vocabulary</FooterLink>
-            <FooterLink to="/grammar/">Grammar</FooterLink>
-            <FooterLink to="/communication/">Communication</FooterLink>
-            <FooterLink to="/acknowledgements.html">
-              Acknowledgements
-            </FooterLink>
-            <ExternalFooterLink
-              href="https://facebook.github.io/react-native/"
-              target="_blank"
-              rel="noopener">
-              React Native
             </ExternalFooterLink>
           </FooterNav>
         </div>
