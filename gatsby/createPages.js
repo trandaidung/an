@@ -15,7 +15,6 @@ module.exports = async ({graphql, actions}) => {
   const redirectToSlugMap = {};
 
   const vocabularyTemplate = resolve(__dirname, '../src/templates/vocabulary.js');
-  const docsTemplate = resolve(__dirname, '../src/templates/docs.js');
 
   // Redirect /index.html to root.
   createRedirect({
@@ -55,21 +54,9 @@ module.exports = async ({graphql, actions}) => {
       // Error codes are managed by a page in src/pages
       // (which gets created by Gatsby during a separate phase).
     } else if (
-      slug.includes('vocabulary/') ||
-      slug.includes('contributing/') ||
-      slug.includes('docs/') ||
-      slug.includes('warnings/')
+      slug.includes('vocabulary/')
     ) {
-      let template;
-      if (slug.includes('vocabulary/')) {
-        template = vocabularyTemplate;
-      } else if (
-        slug.includes('contributing/') ||
-        slug.includes('docs/') ||
-        slug.includes('warnings/')
-      ) {
-        template = docsTemplate;
-      }
+      const template = vocabularyTemplate;
 
       const createArticlePage = path =>
         createPage({

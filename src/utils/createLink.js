@@ -7,7 +7,6 @@
 
 import {Link} from 'gatsby';
 import React from 'react';
-import slugify from 'utils/slugify';
 import {colors, media} from 'theme';
 
 import type {Node} from 'react';
@@ -25,21 +24,6 @@ const createLinkVocabulary = ({
 }: CreateLinkBaseProps): Node => {
   return (
     <Link css={[linkCss, isActive && activeLinkCss]} to={item.id}>
-      {isActive && <span css={activeLinkBefore} />}
-      {item.title}
-    </Link>
-  );
-};
-
-const createLinkDocs = ({
-  isActive,
-  item,
-  section,
-}: CreateLinkBaseProps): Node => {
-  return (
-    <Link
-      css={[linkCss, isActive && activeLinkCss]}
-      to={slugify(item.id, section.directory)}>
       {isActive && <span css={activeLinkBefore} />}
       {item.title}
     </Link>
@@ -76,4 +60,4 @@ const linkCss = {
   },
 };
 
-export {createLinkVocabulary, createLinkDocs};
+export {createLinkVocabulary};

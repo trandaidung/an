@@ -25,7 +25,7 @@ class Template extends Component<Props> {
 
     // TODO - is there a better way to check if we need we have a sidebar?
     let layoutHasSidebar = false;
-    if (location.pathname.match(/^\/(docs|vocabulary|contributing|warnings)/)) {
+    if (location.pathname.match(/^\/(vocabulary)/)) {
       layoutHasSidebar = true;
     }
 

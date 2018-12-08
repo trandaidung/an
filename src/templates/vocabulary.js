@@ -47,8 +47,6 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 500)
       frontmatter {
         title
-        next
-        prev
         author {
           frontmatter {
             name

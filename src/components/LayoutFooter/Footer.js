@@ -12,7 +12,6 @@ import FooterNav from './FooterNav';
 import MetaTitle from 'templates/components/MetaTitle';
 import React from 'react';
 import {colors, media} from 'theme';
-import {sectionListDocs} from 'utils/sectionList';
 
 import ossLogoPng from 'images/oss_logo.png';
 
@@ -59,19 +58,6 @@ const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
               paddingLeft: 40,
             },
           }}>
-          <FooterNav layoutHasSidebar={layoutHasSidebar}>
-            <MetaTitle onDark={true}>Docs</MetaTitle>
-            {sectionListDocs.map(section => {
-              const defaultItem = section.items[0];
-              return (
-                <FooterLink
-                  to={`/docs/${defaultItem.id}.html`}
-                  key={section.title}>
-                  {section.title}
-                </FooterLink>
-              );
-            })}
-          </FooterNav>
           <FooterNav layoutHasSidebar={layoutHasSidebar}>
             <MetaTitle onDark={true}>Channels</MetaTitle>
             <ExternalFooterLink

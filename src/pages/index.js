@@ -148,7 +148,7 @@ class Home extends Component {
                       <ButtonLink
                         to="/docs/getting-started.html"
                         type="primary">
-                        Get Started
+                        todo
                       </ButtonLink>
                     </CtaItem>
                     <CtaItem>
@@ -284,7 +284,7 @@ class Home extends Component {
               <Flex valign="center">
                 <CtaItem>
                   <ButtonLink to="/docs/getting-started.html" type="primary">
-                    Get Started
+                    todo
                   </ButtonLink>
                 </CtaItem>
                 <CtaItem>
