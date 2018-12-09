@@ -7,57 +7,62 @@
 
 import Container from 'components/Container';
 import HeaderLink from './HeaderLink';
-import { Link } from 'gatsby';
+import {Link} from 'gatsby';
 import React from 'react';
-import { colors, fonts, media } from 'theme';
+import {colors, fonts, media} from 'theme';
 import ExternalLinkSvg from 'templates/components/ExternalLinkSvg';
 
 import logoSvg from 'icons/logo.svg';
 
-type State = {
-  isTop: boolean
+type Props = {
+  location: Location,
 };
 
-class Header extends React.Component<Location, State> {
-  constructor(props: Location) {
-    super(props)
+type State = {
+  isTop: boolean,
+};
+
+class Header extends React.Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
 
     this.state = {
-      isTop: true
-    }
+      isTop: true,
+    };
 
-    this.handleScrolling = this.handleScrolling.bind(this)
+    const self: any = this;
+    self.handleScrolling = this.handleScrolling.bind(this);
   }
 
   componentDidMount() {
     this.setState({
-      isTop: window.scrollY === 0
+      isTop: window.scrollY === 0,
     });
 
-    window.addEventListener('scroll', this.handleScrolling)
+    window.addEventListener('scroll', this.handleScrolling);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScrolling)
+    window.removeEventListener('scroll', this.handleScrolling);
   }
 
   handleScrolling() {
     if (window.scrollY !== 0) {
       if (this.state.isTop) {
-        this.setState({ isTop: false })
+        this.setState({isTop: false});
       } else {
-        return
+        return;
       }
     } else {
-      this.setState({ isTop: true })
+      this.setState({isTop: true});
     }
   }
 
   render() {
-    const { location } = this.props
-    const { isTop } = this.state
+    const {location} = this.props;
+    const {isTop} = this.state;
 
-    const whiteHeader = (location.pathname === '/') && isTop
+    const whiteHeader = location.pathname === '/' && isTop;
 
     return (
       <header
@@ -131,7 +136,7 @@ class Header extends React.Component<Location, State> {
                   },
                 }}>
                 an
-          </span>
+              </span>
             </Link>
 
             <nav
@@ -205,7 +210,7 @@ class Header extends React.Component<Location, State> {
                 target="_blank"
                 rel="noopener">
                 Facebook
-            <ExternalLinkSvg
+                <ExternalLinkSvg
                   cssProps={{
                     marginLeft: 5,
                     verticalAlign: -2,
@@ -217,8 +222,8 @@ class Header extends React.Component<Location, State> {
           </div>
         </Container>
       </header>
-    )
+    );
   }
-};
+}
 
 export default Header;

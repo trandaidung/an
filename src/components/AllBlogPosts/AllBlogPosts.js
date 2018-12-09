@@ -5,7 +5,7 @@
  * @flow
  */
 
-import {graphql, Link} from 'gatsby';
+import {Link} from 'gatsby';
 import Layout from 'components/Layout';
 import Container from 'components/Container';
 import Header from 'components/Header';

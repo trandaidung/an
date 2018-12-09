@@ -1,19 +1,17 @@
 // @flow
 
+import React from 'react';
 import AllBlogPosts from 'components/AllBlogPosts';
 import type {allMarkdownRemarkData} from 'types';
+import {graphql} from 'gatsby';
 
 type Props = {
   data: allMarkdownRemarkData,
-  location: Location
+  location: Location,
 };
 
 const AllCommunicationPosts = ({data, location}: Props) => (
-  <AllBlogPosts 
-    blogType={'communication'}
-    data={data}
-    location={location}  
-  />
+  <AllBlogPosts blogType={'communication'} data={data} location={location} />
 );
 
 export const pageQuery = graphql`

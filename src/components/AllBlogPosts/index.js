@@ -1,5 +1,5 @@
 // @flow
 
-import AllBlogPosts from './AllBlogPosts'
+import AllBlogPosts from './AllBlogPosts';
 
-export default AllBlogPosts
+export default AllBlogPosts;

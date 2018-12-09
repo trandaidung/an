@@ -17,7 +17,7 @@ import loadScript from 'utils/loadScript';
 import createOgUrl from 'utils/createOgUrl';
 import {babelURL} from 'site-constants';
 import bookLoverSvg from 'images/book_lover.svg';
-import { keys, split } from 'lodash'
+import {keys, split} from 'lodash';
 
 class Home extends Component {
   state = {
@@ -224,7 +224,6 @@ class Home extends Component {
                           color: colors.black + '!important',
                           paddingTop: 0,
                           fontWeight: 600,
-                          fontSize: 20,
                           border: 'none !important',
                           fontSize: 24,
                         }}
@@ -232,13 +231,13 @@ class Home extends Component {
                         to={data[type].edges[0].node.fields.slug}>
                         {data[type].edges[0].node.frontmatter.title}
                       </Link>
-                      <div 
+                      <div
                         css={{
                           marginTop: 10,
                           marginBottom: 20,
                         }}>
-                        in 
-                        <Link 
+                        in
+                        <Link
                           css={{
                             borderBottom: '1px solid #ececec',
                             ':hover': {
@@ -252,11 +251,12 @@ class Home extends Component {
                           {type}
                         </Link>
                       </div>
-                      <div 
+                      <div
                         css={{
-                          color:colors.subtle
+                          color: colors.subtle,
                         }}>
-                        { split(data[type].edges[0].node.html, /<[^>]*>/g, 2)[1] }...
+                        {split(data[type].edges[0].node.html, /<[^>]*>/g, 2)[1]}
+                        ...
                       </div>
                     </div>
                   ))}
@@ -369,7 +369,7 @@ export const pageQuery = graphql`
           html
         }
       }
-    }    
+    }
   }
 `;
 
@@ -382,11 +382,5 @@ const sectionStyles = {
   [media.greaterThan('medium')]: {
     marginTop: 60,
     marginBottom: 65,
-  },
-};
-
-const headingStyles = {
-  '&&': {
-    marginBottom: 20,
   },
 };

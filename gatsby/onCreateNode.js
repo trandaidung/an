@@ -57,7 +57,7 @@ module.exports = exports.onCreateNode = ({node, actions, getNode}) => {
             slug = `/grammar/${year}/${month}/${day}/${filename}.html`;            
           } else if (relativePath.includes('communication')) {
             slug = `/communication/${year}/${month}/${day}/${filename}.html`;            
-          };
+          }
 
           const date = new Date(year, month - 1, day);
 

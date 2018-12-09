@@ -62,12 +62,12 @@ module.exports = async ({graphql, actions}) => {
     ) {
       let template;
       if (slug.includes('/vocabulary/')) {
-        template = vocabularyTemplate
+        template = vocabularyTemplate;
       } else if (slug.includes('grammar/')) {
-        template = grammarTemplate
+        template = grammarTemplate;
       } else if (slug.includes('communication/')) {
-        template = communicationTemplate
-      };
+        template = communicationTemplate;
+      }
 
       const createArticlePage = path =>
         createPage({
