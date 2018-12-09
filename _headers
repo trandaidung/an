@@ -1,0 +1,230 @@
+## Created with gatsby-plugin-netlify
+
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+/static/*
+  Cache-Control: public, max-age=31536000, immutable
+/an/redirect-to-codepen/16-3-release-blog-post/context-example
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/16-3-release-blog-post/create-ref-example
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/16-3-release-blog-post/fancy-button-example
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/16-3-release-blog-post/forward-ref-example
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/16-3-release-blog-post/hoc-theme-example
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/16-4-release-blog-post/pointer-events-example
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/components-and-props/composing-components
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/components-and-props/extracting-components-continued
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/components-and-props/extracting-components
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/components-and-props/rendering-a-component
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/context/motivation-problem
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/context/motivation-solution
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/context/multiple-contexts
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/context/reference-caveats-problem
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/context/reference-caveats-solution
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/context/theme-detailed-app
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/context/theme-detailed-theme-context
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/context/theme-detailed-themed-button
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/context/updating-nested-context-app
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/context/updating-nested-context-context
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/context/updating-nested-context-theme-toggler-button
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/es5-syntax-example
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/forwarding-refs/customized-display-name
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/forwarding-refs/fancy-button-ref
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/forwarding-refs/fancy-button-simple-ref
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/forwarding-refs/fancy-button-simple
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/forwarding-refs/fancy-button
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/forwarding-refs/log-props-after
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/forwarding-refs/log-props-before
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/forwarding-refs/wrapped-component-with-function-name
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/forwarding-refs/wrapped-component
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/hello-world
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/introducing-jsx
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/jsx-simple-example
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/react-component-reference/get-snapshot-before-update
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/reconciliation/index-used-as-key
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/reconciliation/no-index-used-as-key
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/reference-react-forward-ref
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/rendering-elements/render-an-element
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/rendering-elements/update-rendered-element
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/strict-mode/enabling-strict-mode
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/strict-mode/side-effects-in-constructor
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/tutorial-expanded-version
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/uncontrolled-components/input-type-file
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/adding-event-listeners-after
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/adding-event-listeners-before
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/adding-event-listeners-create-subscription
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/definition-getderivedstatefromprops
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/definition-getsnapshotbeforeupdate
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/fetching-external-data-after
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/fetching-external-data-before
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/initializing-state-after
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/initializing-state-before
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/invoking-external-callbacks-after
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/invoking-external-callbacks-before
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/react-dom-properties-before-update-after
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/react-dom-properties-before-update-before
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/side-effects-when-props-change-after
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/side-effects-when-props-change-before
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/updating-external-data-when-props-change-after
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/updating-external-data-when-props-change-before
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/updating-state-from-props-after
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/updating-state-from-props-before
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/redirect-to-codepen/update-on-async-rendering/using-react-lifecycles-compat
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/communication/2018/12/08/demo-communication-content.html
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/1-4fa589fe31b8405e43bd.js>; rel=preload; as=script
+/an/grammar/2018/12/08/demo-grammar-content.html
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/1-4fa589fe31b8405e43bd.js>; rel=preload; as=script
+/an/vocabulary/2018/11/27/react-16-roadmap.html
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/1-4fa589fe31b8405e43bd.js>; rel=preload; as=script
+/an/404/
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/1-4fa589fe31b8405e43bd.js>; rel=preload; as=script
+/an/communication/all.html/
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/1-4fa589fe31b8405e43bd.js>; rel=preload; as=script
+/an/grammar/all.html/
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/1-4fa589fe31b8405e43bd.js>; rel=preload; as=script
+/an/
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/1-4fa589fe31b8405e43bd.js>; rel=preload; as=script
+/an/jsx-compiler.html/
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/0-436cbbb49273d274aa18.js>; rel=preload; as=script
+/an/vocabulary/all.html/
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/1-4fa589fe31b8405e43bd.js>; rel=preload; as=script
+/an/404.html
+  Link: </an/webpack-runtime-68dbfe52fda1ae50bb2f.js>; rel=preload; as=script
+  Link: </an/1-4fa589fe31b8405e43bd.js>; rel=preload; as=script
