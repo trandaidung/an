@@ -7,10 +7,9 @@
 import ButtonLink from 'components/ButtonLink';
 import Container from 'components/Container';
 import Flex from 'components/Flex';
-import CodeExample from 'components/CodeExample';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
-import {graphql} from 'gatsby';
+import {graphql, Link} from 'gatsby';
 import TitleAndMetaTags from 'components/TitleAndMetaTags';
 import Layout from 'components/Layout';
 import {colors, media, sharedStyles} from 'theme';
@@ -18,6 +17,7 @@ import loadScript from 'utils/loadScript';
 import createOgUrl from 'utils/createOgUrl';
 import {babelURL} from 'site-constants';
 import bookLoverSvg from 'images/book_lover.svg';
+import { keys, split } from 'lodash'
 
 class Home extends Component {
   state = {
@@ -40,12 +40,6 @@ class Home extends Component {
   render() {
     const {babelLoaded} = this.state;
     const {data, location} = this.props;
-    const {codeExamples, examples, marketing} = data;
-
-    const code = codeExamples.edges.reduce((lookup, {node}) => {
-      lookup[node.mdAbsolutePath] = node;
-      return lookup;
-    }, {});
 
     return (
       <Layout location={location}>
@@ -193,7 +187,7 @@ class Home extends Component {
                       whiteSpace: 'nowrap',
                     },
                   }}>
-                  {marketing.edges.map(({node: column}, index) => (
+                  {keys(data).map((type, index) => (
                     <div
                       key={index}
                       css={{
@@ -224,26 +218,46 @@ class Home extends Component {
                           },
                         },
                       }}>
-                      <h3
-                        css={[
-                          headingStyles,
-                          {
-                            '&&': {
-                              // Make specificity higher than the site-wide h3 styles.
-                              color: colors.subtle,
-                              paddingTop: 0,
-                              fontWeight: 300,
-                              fontSize: 20,
-
-                              [media.greaterThan('xlarge')]: {
-                                fontSize: 24,
-                              },
+                      <Link
+                        css={{
+                          backgroundColor: 'unset !important',
+                          color: colors.black + '!important',
+                          paddingTop: 0,
+                          fontWeight: 600,
+                          fontSize: 20,
+                          border: 'none !important',
+                          fontSize: 24,
+                        }}
+                        key={data[type].edges[0].node.fields.slug}
+                        to={data[type].edges[0].node.fields.slug}>
+                        {data[type].edges[0].node.frontmatter.title}
+                      </Link>
+                      <div 
+                        css={{
+                          marginTop: 10,
+                          marginBottom: 20,
+                        }}>
+                        in 
+                        <Link 
+                          css={{
+                            borderBottom: '1px solid #ececec',
+                            ':hover': {
+                              borderBottomColor: colors.black,
                             },
-                          },
-                        ]}>
-                        {column.frontmatter.title}
-                      </h3>
-                      <div dangerouslySetInnerHTML={{__html: column.html}} />
+                            marginLeft: 5,
+                            textTransform: 'capitalize',
+                          }}
+                          key={type}
+                          to={type}>
+                          {type}
+                        </Link>
+                      </div>
+                      <div 
+                        css={{
+                          color:colors.subtle
+                        }}>
+                        { split(data[type].edges[0].node.html, /<[^>]*>/g, 2)[1] }...
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -266,8 +280,9 @@ class Home extends Component {
 
 Home.propTypes = {
   data: PropTypes.shape({
-    examples: PropTypes.object.isRequired,
-    marketing: PropTypes.object.isRequired,
+    vocabulary: PropTypes.object.isRequired,
+    grammar: PropTypes.object.isRequired,
+    communication: PropTypes.object.isRequired,
   }).isRequired,
 };
 
@@ -301,19 +316,10 @@ const CtaItem = ({children, primary = false}) => (
 
 export const pageQuery = graphql`
   query IndexMarkdown {
-    codeExamples: allExampleCode {
-      edges {
-        node {
-          id
-          code
-          mdAbsolutePath
-        }
-      }
-    }
-
-    examples: allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "//home/examples//"}}
-      sort: {fields: [frontmatter___order], order: ASC}
+    vocabulary: allMarkdownRemark(
+      limit: 1
+      filter: {fileAbsolutePath: {regex: "/vocabulary/"}}
+      sort: {fields: [fields___date], order: DESC}
     ) {
       edges {
         node {
@@ -328,12 +334,17 @@ export const pageQuery = graphql`
         }
       }
     }
-    marketing: allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "//home/marketing//"}}
-      sort: {fields: [frontmatter___order], order: ASC}
+    grammar: allMarkdownRemark(
+      limit: 1
+      filter: {fileAbsolutePath: {regex: "/grammar/"}}
+      sort: {fields: [fields___date], order: DESC}
     ) {
       edges {
         node {
+          fileAbsolutePath
+          fields {
+            slug
+          }
           frontmatter {
             title
           }
@@ -341,6 +352,24 @@ export const pageQuery = graphql`
         }
       }
     }
+    communication: allMarkdownRemark(
+      limit: 1
+      filter: {fileAbsolutePath: {regex: "/communication/"}}
+      sort: {fields: [fields___date], order: DESC}
+    ) {
+      edges {
+        node {
+          fileAbsolutePath
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+          html
+        }
+      }
+    }    
   }
 `;
 
