@@ -34,7 +34,6 @@ const style = {
 
   ':focus': {
     outline: 0,
-    backgroundColor: colors.lighter,
     color: colors.white,
   },
 
