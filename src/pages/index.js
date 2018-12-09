@@ -17,7 +17,7 @@ import {colors, media, sharedStyles} from 'theme';
 import loadScript from 'utils/loadScript';
 import createOgUrl from 'utils/createOgUrl';
 import {babelURL} from 'site-constants';
-import logoWhiteSvg from 'icons/logo-white.svg';
+import bookLoverSvg from 'images/book_lover.svg';
 
 class Home extends Component {
   state = {
@@ -56,8 +56,8 @@ class Home extends Component {
         <div css={{width: '100%'}}>
           <header
             css={{
-              backgroundColor: colors.dark,
-              color: colors.white,
+              backgroundColor: colors.white,
+              color: colors.dark,
             }}>
             <div
               css={{
@@ -83,11 +83,11 @@ class Home extends Component {
                     left: 0,
                     bottom: 0,
                     right: 0,
-                    backgroundImage: `url(${logoWhiteSvg})`,
+                    backgroundImage: `url(${bookLoverSvg})`,
                     backgroundRepeat: 'no-repeat',
-                    backgroundPosition: '100% 100px',
-                    backgroundSize: '50% auto',
-                    opacity: 0.05,
+                    backgroundPosition: '100% 50px',
+                    backgroundSize: '33% auto',
+                    // opacity: 0.05,
                   },
                 },
               }}>
@@ -95,12 +95,15 @@ class Home extends Component {
                 css={{
                   // Content should be above absolutely-positioned hero image
                   position: 'relative',
+                  [media.greaterThan('medium')]: {
+                    marginLeft: 150,
+                  },
                 }}>
                 <Container>
                   <h1
                     css={{
-                      color: colors.brand,
-                      textAlign: 'center',
+                      color: colors.black,
+                      textAlign: 'left',
                       margin: 0,
                       fontSize: 45,
                       letterSpacing: '0.01em',
@@ -111,12 +114,12 @@ class Home extends Component {
                         fontSize: 60,
                       },
                     }}>
-                    React
+                    Welcome to my blog
                   </h1>
                   <p
                     css={{
                       paddingTop: 15,
-                      textAlign: 'center',
+                      textAlign: 'left',
                       fontSize: 24,
                       letterSpacing: '0.01em',
                       fontWeight: 200,
@@ -148,12 +151,12 @@ class Home extends Component {
                       <ButtonLink
                         to="/docs/getting-started.html"
                         type="primary">
-                        todo
+                        Bài viết nổi bật
                       </ButtonLink>
                     </CtaItem>
                     <CtaItem>
                       <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                        todo
+                        Tất cả bài viết
                       </ButtonLink>
                     </CtaItem>
                   </Flex>
@@ -253,48 +256,8 @@ class Home extends Component {
                   borderBottom: `1 solid ${colors.divider}`,
                 }}
               />
-              <section css={sectionStyles}>
-                <div id="examples">
-                  {examples.edges.map(({node}, index) => {
-                    const snippet = code[node.fileAbsolutePath];
-                    return (
-                      <CodeExample
-                        key={index}
-                        id={snippet.id}
-                        code={snippet.code}
-                        loaded={babelLoaded}>
-                        <h3 css={headingStyles}>{node.frontmatter.title}</h3>
-                        <div dangerouslySetInnerHTML={{__html: node.html}} />
-                      </CodeExample>
-                    );
-                  })}
-                </div>
-              </section>
             </div>
           </Container>
-
-          <section
-            css={{
-              background: colors.dark,
-              color: colors.white,
-              paddingTop: 45,
-              paddingBottom: 45,
-            }}>
-            <Container>
-              <Flex valign="center">
-                <CtaItem>
-                  <ButtonLink to="/docs/getting-started.html" type="primary">
-                    todo
-                  </ButtonLink>
-                </CtaItem>
-                <CtaItem>
-                  <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                    todo
-                  </ButtonLink>
-                </CtaItem>
-              </Flex>
-            </Container>
-          </section>
         </div>
       </Layout>
     );
@@ -311,18 +274,18 @@ Home.propTypes = {
 const CtaItem = ({children, primary = false}) => (
   <div
     css={{
-      width: '50%',
+      // width: '50%',
 
       [media.between('small', 'large')]: {
         paddingLeft: 20,
       },
 
       [media.greaterThan('xlarge')]: {
-        paddingLeft: 40,
+        // paddingLeft: 40,
       },
 
       '&:first-child': {
-        textAlign: 'right',
+        textAlign: 'left',
         paddingRight: 15,
       },
 

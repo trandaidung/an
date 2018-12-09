@@ -18,7 +18,7 @@ import ossLogoPng from 'images/oss_logo.png';
 const Footer = ({layoutHasSidebar = false}: {layoutHasSidebar: boolean}) => (
   <footer
     css={{
-      backgroundColor: colors.darker,
+      backgroundColor: colors.brander,
       color: colors.white,
       paddingTop: 10,
       paddingBottom: 50,
