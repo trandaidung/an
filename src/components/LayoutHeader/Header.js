@@ -62,20 +62,30 @@ class Header extends React.Component<Props, State> {
     const {location} = this.props;
     const {isTop} = this.state;
 
-    const whiteHeader = location.pathname === '/' && isTop;
+    let headerType;
+    if (
+      (location.pathname === '/' || location.pathname.includes('/an')) &&
+      isTop
+    ) {
+      headerType = whiteHeaderStyle;
+    } else {
+      headerType = normalHeaderStyle;
+    }
 
     return (
       <header
-        css={{
-          backgroundColor: whiteHeader ? colors.white : colors.darker,
-          color: colors.white,
-          position: 'fixed',
-          zIndex: 1,
-          width: '100%',
-          top: 0,
-          left: 0,
-          transition: 'background-color 0.3s linear',
-        }}>
+        css={[
+          headerType,
+          {
+            color: colors.white,
+            position: 'fixed',
+            zIndex: 1,
+            width: '100%',
+            top: 0,
+            left: 0,
+            transition: 'background-color 0.3s linear',
+          },
+        ]}>
         <Container>
           <div
             css={{
@@ -225,5 +235,13 @@ class Header extends React.Component<Props, State> {
     );
   }
 }
+
+const whiteHeaderStyle = {
+  backgroundColor: colors.white,
+};
+
+const normalHeaderStyle = {
+  backgroundColor: colors.darker,
+};
 
 export default Header;
