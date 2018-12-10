@@ -3,6 +3,9 @@ jobs:
   build:
     docker:
       - image: circleci/node:8
+    branches:
+      ignore:
+        - gh-pages
     steps:
       - checkout
       - restore_cache:
