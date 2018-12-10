@@ -62,11 +62,11 @@ class Header extends React.Component<Props, State> {
     const {location} = this.props;
     const {isTop} = this.state;
 
+    const isHomePage =
+      location.pathname === '/' || location.pathname === '/an/';
+
     let headerType;
-    if (
-      (location.pathname === '/' || location.pathname.includes('/an')) &&
-      isTop
-    ) {
+    if (isHomePage && isTop) {
       headerType = whiteHeaderStyle;
     } else {
       headerType = normalHeaderStyle;
